@@ -1,0 +1,9 @@
+# Packege List
+Node.js@22 for homebrew installation
+
+
+$ node -v 
+v22.11.0
+
+$ npx -v
+10.9.0

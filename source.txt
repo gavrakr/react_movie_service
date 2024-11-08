@@ -1,3 +1,7 @@
+# Environmemt
+M1 MACBOOK
+VS Code
+
 # Packege List
 Node.js@22 for homebrew installation
 

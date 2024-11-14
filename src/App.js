@@ -1,7 +1,10 @@
+import React from "react";
+import Router from "./components/Router";
+
 function App() {
   return (
-    <div>
-      <h1>Welcome Back!!!</h1>
+    <div className="App">
+      <Router />
     </div>
   );
 }

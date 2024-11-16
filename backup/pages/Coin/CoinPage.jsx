@@ -18,7 +18,7 @@ export default function CoinPage() {
   }, []);
   return (
     <div>
-      <h1>The Coins! ({coins.length})</h1>
+      <h1>The Coins! {loading ? "" : `(${coins.length})`}</h1>
       {loading ? <strong>Loading...</strong> : null}
       <hr />
       <h2>Coin Caculator</h2>
@@ -40,15 +40,20 @@ export default function CoinPage() {
       <h3>Result : {getCoin > 0 ? (myMoney / getCoin).toFixed(2) : null}</h3>
       <hr />
       <h2>Coin Tracker</h2>
-      <select>
-        <option key="-1">Select Coin</option>
-        {coins.map((coin, index) => (
-          <option key={index}>
-            {coin.name} ({coin.symbol}): USD / ${" "}
-            {coin.quotes.USD.price.toFixed(2)}
-          </option>
-        ))}
-      </select>
+      {loading ? (
+        <strong>Loading...</strong>
+      ) : (
+        <select>
+          <option key="-1">Select Coin</option>
+          {coins.map((coin, index) => (
+            <option key={index}>
+              {coin.name} ({coin.symbol}): USD / ${" "}
+              {coin.quotes.USD.price.toFixed(2)}
+            </option>
+          ))}
+        </select>
+      )}
+
       <ul>
         {coins.map((coin, index) => (
           <li key={index}>
